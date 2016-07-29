@@ -6,9 +6,9 @@
 
 ### Overview 
 
-The goal of this app is to allow an administrator to create 'battles' between two hashtags and analyze the number of typos in tweets tagged with them. 
+The goal of this app is to allow a user to create 'battles' between two hashtags and analyze the number of typos in tweets tagged with them. 
 
-With the BoHT application, administrator can: 
+With the BoHT application, user can: 
 
 - pull/post a tweet with photo/video through Twitter App. 
 - create/read/update/delete a battle by specifying the start & end date times. 
@@ -20,33 +20,33 @@ The final API endpoint is exposed to return the current result for a specific ba
 
 ### Roadmap 
 
-_Note: Version 1.0 - 2.0 is currently functional with a simple front-end UI. 
+_Note: Version 1.0.0 & 1.0.1 is currently functional with a simple front-end UI. 
 It enables to start a battle with two specific hashtags and result in winning one.
-But Version 2.0 is still in progress for implementing the battle configuration.
+But Version 1.0.2 is still in progress for implementing the periodic tasks.
 
-#### Version 1.0 
+#### Version 1.0.0 
 
-In this version, administrator will be able to: 
+In this version, user is able to: 
 
 - Capture @username via Twitter Login
-
-- Contest/sweepstakes sign-up via Twitter 
-
+- Contest/sweepstakes sign-up via Twitter
 - Pull the last tweets and post new tweet including photo/video
-
 - Tweet out a photo from a user (requires user's explicit contest) 
-
 - Induce interests via friends & followers 
 
-#### Version 2.0 
+#### Version 1.0.1 
 
-In this version, administrator will be able to: 
+In this version, user is able to: 
 
-- Filter a query of tweets by a specific hashtag 
-
-- Battle CRUD with some certain configuration (battle_id, started_at/ended_at, frequency scope, tweet length, etc...) 
-
+- Filter a query of tweets by a specific hashtag
+- Battle CRUD with some certain configuration (battle_id, started_at/ended_at, frequency scope, tweet length, etc...)
 - Determine the winner by some specific comparison factors (i.e., number of typos)
+
+#### Version 1.0.2
+
+In this version, user is able to:
+
+- Set up the periodic task in battle settings (i.e., time-line config: Next Monday ~ Friday)
 
 
 ### Requirements 
@@ -83,9 +83,9 @@ In the version 1.0, BoHT's architecture will use these technologies, django + RD
 
     _Note: In your Twitter Application Settings, you MUST set up the Callback URL to http://127.0.0.1:8000/complete/twitter 
     
-    ```SOCIAL_AUTH_TWITTER_KEY = 'your app client id'```    
-    ```SOCIAL_AUTH_TWITTER_SECRET = 'your app client secret'```    
-    ```TWITTER_ACCESS_TOKEN  = 'your app access token'```     
+    ```SOCIAL_AUTH_TWITTER_KEY = 'your app client id'```
+    ```SOCIAL_AUTH_TWITTER_SECRET = 'your app client secret'```
+    ```TWITTER_ACCESS_TOKEN  = 'your app access token'``` 
     ```TWITTER_ACCESS_TOKEN_SECRET  = 'your app access token secret'```
     
 5. Migrate the database 
@@ -100,8 +100,8 @@ In the version 1.0, BoHT's architecture will use these technologies, django + RD
 
     ```python manage.py runserver```
 
-#### Installation for live application (run on the heroku) 
+#### Installation for live application (run on the Digital Ocean) 
 
-In the version 3.0, BoHT application will run on the heroku development stage, and go to move the final version on the living server. 
+In the version 2.0, BoHT application will run on the Ubuntu Server of Digital Ocean, and go to move the final version on the living server. 
 
 
